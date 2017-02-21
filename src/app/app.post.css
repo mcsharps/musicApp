@@ -1,0 +1,11 @@
+// app.post.css
+
+.app {
+    &__nav a+a:before {
+        content: " | ";
+    }
+
+    &__nav a:hover {
+        text-decoration: none;
+    }
+}

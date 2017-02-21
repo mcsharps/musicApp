@@ -1,0 +1,22 @@
+:root {
+    --u-error--color: red;
+
+    // Fonts
+    --base-font-size: 1.6rem;
+    --base-line-height: 1.8;
+
+    --font-size-xs: calc(var(--base-font-size) * 0.75);
+    --font-size-sm: calc(var(--base-font-size) * 0.875);
+    --font-size-md: calc(var(--base-font-size) * 1.125);
+    --font-size-lg: calc(var(--base-font-size) * 1.25);
+    --font-size-xl: calc(var(--base-font-size) * 1.375);
+    --font-size-xxl: calc(var(--base-font-size) * 1.625);
+
+    --font-light: 300;
+    --font-normal: 400;
+    --font-bold: 500;
+    --font-bolder: 600;
+
+    // Media Queries
+    --ie: 0/0;
+}

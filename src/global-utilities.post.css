@@ -1,0 +1,19 @@
+// global-utilities.post.css
+
+.u {
+    &-hidden {
+        display: none !important;
+    }
+
+    &-invisible {
+        visibility: hidden !important;
+    }
+
+    &-no-padding {
+        padding: 0 !important;
+    }
+
+    &-no-margin {
+        margin: 0 !important;
+    }
+}

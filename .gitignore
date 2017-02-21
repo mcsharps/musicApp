@@ -1,0 +1,9 @@
+# Dependencies
+node_modules
+proxy
+# Release Folder
+dist
+
+# Keep this file clean by using one of:
+#   - core.excludesfile
+#   - ./.git/info/exclude

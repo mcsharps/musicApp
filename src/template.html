@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon"type="image/x-icon" href="<%= require('./favicon.ico') %>">
+</head>
+<body>
+    <div class="container">
+        <div id="app">Loading...</div>
+    </div>
+    <div class="u-hidden"
+         data-build-date="<%= htmlWebpackPlugin.options.buildDate %>"
+         data-build-hash="<%= htmlWebpackPlugin.options.buildHash %>"
+         data-build-version="<%= htmlWebpackPlugin.options.buildVersion %>">
+    </div>
+</body>
+</html>

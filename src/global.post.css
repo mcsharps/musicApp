@@ -1,0 +1,8 @@
+// index.post.css
+// styles for the whole page
+@import "global-utilities.post.css";
+
+
+body {
+    background-color: #fff;
+}

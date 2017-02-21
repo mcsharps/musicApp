@@ -1,0 +1,7 @@
+// counter.post.css
+
+.counter {
+    &__action {
+        margin: 10px;
+    }
+}
