@@ -1,5 +1,5 @@
-# react-starter
-This is a simple build for a new React web app. It can be used as a starting for other web apps.
+# Discogs Music App
+Simple app for displaying a users record collection.
 
 This was forked from [alicoding/react-webpack-babel](https://github.com/alicoding/react-webpack-babel). 
 
@@ -55,3 +55,6 @@ Before working on a feature, consult our [versioning doc](./docs/versioning.md).
 ```
 
 For details see the [deploying doc](./docs/deploying.md)
+
+# To Do
+add general proxy with template for users to interact

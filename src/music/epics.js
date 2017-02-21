@@ -1,6 +1,6 @@
 import { GET_MUSIC_LIBRARY, GET_BEARER_TOKEN } from './action-types';
 import { Observable } from 'rxjs/Observable';
-import { push } from 'react-router-redux';
+// import { push } from 'react-router-redux';
 import { getMusicLibraryFufilled, getBearerTokenFufilled } from './actions';
 
 export const getMusicLibrary = action$ =>
@@ -15,7 +15,7 @@ export const getMusicLibrary = action$ =>
             'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
         }
     })
-    .map(response => console.log(response))
+    .map(response => getMusicLibraryFufilled(response))
     );
 
 export const getBearerToken = action$ =>
@@ -31,17 +31,17 @@ export const getBearerToken = action$ =>
             'authorizeUrl' : {}
         }
     })
-    .mapTo(push('counter'))
+    // .mapTo(push({ url: 'counter' }))
     .map(response => {
-        return console.log(response);
+        console.log(response);
 
-        // return getBearerTokenFufilled(response);
+        return getBearerTokenFufilled(response);
     })
     );
     // .switchMap(() => push('counter'));
     // response.response.authorizeUrl
     // .mapTo(push('counter'));
- // https://github.com/reactjs/react-router-redux/issues/366
+ //
 // var headers = {
 //   'Accept': 'application/json',
 //   'Content-Type': 'application/json',
