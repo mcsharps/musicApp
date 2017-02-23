@@ -2,6 +2,7 @@ import App from './app';
 import Counter from './counter';
 import Yason from './yason';
 import Music from './music';
+import Callback from './callback';
 
 export const routes = {
     path: '/',
@@ -21,6 +22,10 @@ export const routes = {
         {
             path: 'music',
             component: Music
+        },
+        {
+            path: 'callback',
+            component: Callback,
         }
     ]
 };

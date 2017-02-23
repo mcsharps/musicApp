@@ -1,6 +1,7 @@
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
+    // parser: 'babel-eslint',
     env: {
         browser: true
     },
@@ -59,6 +60,13 @@ module.exports = {
         'require-jsdoc': 0,
         'sort-keys': 0,
         'sort-vars': 0,
-        'sort-imports': 0
+        'sort-imports': 0,
+        // 'comma-dangle': ['error', {
+        //     arrays: 'always-multiline',
+        //     objects: 'always-multiline',
+        //     imports: 'always-multiline',
+        //     exports: 'always-multiline',
+        //     functions: 'only-multiline'
+        // }]
     }
 };

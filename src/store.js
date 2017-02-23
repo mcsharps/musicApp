@@ -9,6 +9,7 @@ import yasonified from './yason/reducers';
 import albums from './music/reducers';
 import { browserHistory } from 'react-router';
 import { getMusicLibrary, getBearerToken } from './music/epics';
+import { getCallbackTokens } from './callback/epics';
 const rootReducer = combineReducers({
     // set with preloaded state
     config: s => s || null,
@@ -21,7 +22,8 @@ const rootReducer = combineReducers({
 
 export const rootEpic = combineEpics(
   getMusicLibrary,
-  getBearerToken
+  getBearerToken,
+  getCallbackTokens
 );
 const epicMiddleware = createEpicMiddleware(rootEpic);
 

@@ -24,6 +24,16 @@ export default class View extends Component {
         this.props.actions.getBearerToken();
         this.props.actions.getMusicLibrary();
     }
+    authorizeLink () {
+        const { albums } = this.props;
+
+        if (albums.bearer === undefined) {
+            return null;
+        }
+        console.log(albums.bearer);
+
+        return (<a href={albums.bearer.response.authorize}>Authorize!</a>);
+    }
     musicResults () {
         const { albums } = this.props;
 
@@ -55,6 +65,7 @@ export default class View extends Component {
             <div className="musicLibrary__div_container">
                 <div>
                     {this.musicResults() || <div> loading fool </div>}
+                    {this.authorizeLink() || <div> loading authorizer</div>}
                 </div>
             </div>
         );

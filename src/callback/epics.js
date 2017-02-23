@@ -1,31 +1,15 @@
-import { GET_MUSIC_LIBRARY, GET_BEARER_TOKEN } from './action-types';
+import { GET_CALLBACK_TOKEN } from './action-types';
 import { Observable } from 'rxjs/Observable';
 // import { push } from 'react-router-redux';
-import { getMusicLibraryFufilled, getBearerTokenFufilled } from './actions';
+import { getCallbackTokenFufilled } from './actions';
 
-export const getMusicLibrary = action$ =>
+export const getCallbackTokens = action$ =>
     action$
-    .ofType(GET_MUSIC_LIBRARY)
-    .mergeMap(() =>
-    Observable.ajax({
-        url: 'https://api.discogs.com/users/mcsharps/collection/folders/0/releases',
-        method: 'GET',
-        crossDomain: true,
-        headers : {
-            'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-        }
-    })
-    .map(response => getMusicLibraryFufilled(response))
-    );
-// let authorizeUrl;
-
-export const getBearerToken = action$ =>
-    action$
-    .ofType(GET_BEARER_TOKEN)
+    .ofType(GET_CALLBACK_TOKEN)
     .mergeMap(() =>
         // Observable.concat(
             Observable.ajax({
-                url: 'http://127.0.0.1:7777/authorize',
+                url: 'http://127.0.0.1:7777/callback',
                 method: 'POST',
                 crossDomain: true,
                 headers : {
@@ -33,7 +17,7 @@ export const getBearerToken = action$ =>
                     'authorizeUrl' : {}
                 }
             })
-            .map(response => getBearerTokenFufilled(response))
+            .map(response => getCallbackTokenFufilled(response))
         // Observable.of(window.history.pushState({
         //     'https://www.discogs.com/oauth/authorize?oauth_token=aNiQZFEwtbnfUFFNdhDGzgwgUsvlEpSLYwSJPZgW' }))
 
