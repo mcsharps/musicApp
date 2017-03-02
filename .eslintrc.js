@@ -61,6 +61,7 @@ module.exports = {
         'sort-keys': 0,
         'sort-vars': 0,
         'sort-imports': 0,
+        'camelcase': 0,
         // 'comma-dangle': ['error', {
         //     arrays: 'always-multiline',
         //     objects: 'always-multiline',

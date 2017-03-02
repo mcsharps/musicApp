@@ -4,18 +4,15 @@ import { routerReducer, routerMiddleware } from 'react-router-redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 // import { rootEpic } from './modules/root';
 // import logger from 'redux-logger';
-import counter from './counter/reducers';
-import yasonified from './yason/reducers';
 import albums from './music/reducers';
 import { browserHistory } from 'react-router';
-import { getMusicLibrary, getBearerToken } from './music/epics';
+import { getMusicLibrary } from './music/epics';
+import { getBearerToken } from './authorize/epics';
 import { getCallbackTokens } from './callback/epics';
 const rootReducer = combineReducers({
     // set with preloaded state
     config: s => s || null,
 
-    counter,
-    yasonified,
     albums,
     routing: routerReducer
 });

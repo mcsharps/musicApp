@@ -9,7 +9,7 @@ export const getCallbackTokens = action$ =>
     .mergeMap(() =>
         // Observable.concat(
             Observable.ajax({
-                url: 'http://127.0.0.1:7777/callback',
+                url: 'http://127.0.0.1:7777/identity',
                 method: 'POST',
                 crossDomain: true,
                 headers : {

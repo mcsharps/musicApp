@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react';
 // import * as actions from './actions';
 // import { GET_MUSIC_LIBRARY_FUFILLED } from './action-types';
 import './musiclibrary.post.css';
+
+// It has to do with the actions and index mapping actions to dispatch..
 const propTypes = {
     albums: PropTypes.shape({
         payload: PropTypes.shape({}),
@@ -20,7 +22,6 @@ export default class View extends Component {
 
         console.log(this.props);
         this.props.actions.getBearerToken();
-        this.props.actions.getMusicLibrary();
     }
     authorizeLink () {
         const { albums } = this.props;
@@ -32,38 +33,11 @@ export default class View extends Component {
 
         return (<a href={albums.bearer.response.authorize}>Authorize!</a>);
     }
-    musicResults () {
-        const { albums } = this.props;
-
-        if (albums.payload === undefined) {
-            return null;
-        }
-        let mappedArtists,
-            mappedTitles;
-
-        return albums.payload
-        .response.data.releases.map((cv, index) => {
-
-            mappedArtists = cv.basic_information.artists.map((artist, i) =>
-                <div key={i}> {artist.name}</div>);
-            mappedTitles = <ul>
-            <li> {cv.basic_information.title} </li>
-            <img src={cv.basic_information.thumb} className="albums__images" />
-            </ul>;
-
-            return (<div key={index}>
-                {mappedArtists}
-                {mappedTitles}
-                </div>);
-        });
-    }
     render () {
-            // albums not MusicReducer
-
         return (
             <div className="musicLibrary__div_container">
                 <div>
-                    {this.musicResults() || <div> loading fool </div>}
+                    Enter user name here <br />
                     {this.authorizeLink() || <div> loading authorizer</div>}
                 </div>
             </div>

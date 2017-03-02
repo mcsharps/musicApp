@@ -7,7 +7,7 @@ import View from './view';
 
 
 const mapStateToProps = state => ({
-    count: state.counter
+    ...state
 });
 
 
