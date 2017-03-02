@@ -14,6 +14,9 @@ const getConfig = function (isProd) {
 
             require('postcss-mixins'),
 
+            require('lost'),
+            //grid system
+
             // nested selectors: `.parent-class { .child-class-1 { ... }, child-class-2 { ... }}`
             require('postcss-nested'),
 

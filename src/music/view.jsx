@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 // import * as actions from './actions';
 // import { GET_MUSIC_LIBRARY_FUFILLED } from './action-types';
+// look into html 5 tag figure for image stuff
 import './musiclibrary.post.css';
 const propTypes = {
     albums: PropTypes.shape({
@@ -19,7 +20,6 @@ export default class View extends Component {
     componentWillMount () {
 
         console.log(this.props);
-        this.props.actions.getBearerToken();
         this.props.actions.getMusicLibrary();
     }
     authorizeLink () {
@@ -51,7 +51,7 @@ export default class View extends Component {
             <img src={cv.basic_information.thumb} className="albums__images" />
             </ul>;
 
-            return (<div key={index}>
+            return (<div className="albums__div" key={index}>
                 {mappedArtists}
                 {mappedTitles}
                 </div>);
@@ -64,7 +64,6 @@ export default class View extends Component {
             <div className="musicLibrary__div_container">
                 <div>
                     {this.musicResults() || <div> loading fool </div>}
-                    {this.authorizeLink() || <div> loading authorizer</div>}
                 </div>
             </div>
         );

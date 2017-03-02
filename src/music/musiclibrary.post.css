@@ -8,3 +8,6 @@
     width: 150px;
     height: 150px;
 }
+.albums__div{
+    lost-column: 1/4;
+}
