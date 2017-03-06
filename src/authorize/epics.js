@@ -12,7 +12,7 @@ export const getBearerToken = action$ =>
                 crossDomain: true,
                 headers : {
                     'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8',
-                    'authorizeUrl' : {}
+                    'usernameToFetch' : 'mcsharps'
                 }
             })
             .map(response => getBearerTokenFufilled(response))

@@ -38,22 +38,26 @@ export default class View extends Component {
         if (albums.payload === undefined) {
             return null;
         }
-        let mappedArtists,
-            mappedTitles;
+        let mappedArtist,
+            mappedTitle,
+            mappedImage;
 
         return albums.payload
         .response.data.releases.map((cv, index) => {
 
-            mappedArtists = cv.basic_information.artists.map((artist, i) =>
+            mappedArtist = cv.basic_information.artists.map((artist, i) =>
                 <div key={i}> {artist.name}</div>);
-            mappedTitles = <ul>
-            <li> {cv.basic_information.title} </li>
-            <img src={cv.basic_information.thumb} className="albums__images" />
-            </ul>;
+            mappedImage = <li>
+                <img src={cv.basic_information.thumb} className="albums__images" />
+            </li>;
+            mappedTitle = <li> {cv.basic_information.title} </li>;
 
             return (<div className="albums__div" key={index}>
-                {mappedArtists}
-                {mappedTitles}
+                <ul>
+                {mappedImage}
+                {mappedArtist}
+                {mappedTitle}
+                </ul>
                 </div>);
         });
     }
@@ -62,9 +66,7 @@ export default class View extends Component {
 
         return (
             <div className="musicLibrary__div_container">
-                <div>
                     {this.musicResults() || <div> loading fool </div>}
-                </div>
             </div>
         );
     }
