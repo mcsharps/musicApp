@@ -19,7 +19,8 @@ export default function reducer (state = initialState, action) {
         return { ...state,
             payload : action.payload };
     case GET_BEARER_TOKEN:
-        return state;
+        return { ...state,
+            payload : action.payload };
     case GET_BEARER_TOKEN_FUFILLED:
         return { ...state,
             bearer: action.payload };

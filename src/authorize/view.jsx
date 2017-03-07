@@ -18,10 +18,21 @@ const propTypes = {
 
 
 export default class View extends Component {
+    constructor (props) {
+        super(props);
+        this.state = { value: '' };
+        this.handleChange = this.handleChange.bind(this);
+        this.getBearer = this.getBearer.bind(this);
+        this.authorizeLink = this.authorizeLink.bind(this);
+    }
     componentWillMount () {
-
-        console.log(this.props);
-        this.props.actions.getBearerToken();
+        // console.log(this.props);
+    }
+    handleChange (event) {
+        this.setState({ value: event.target.value });
+    }
+    getBearer () {
+        this.props.actions.getBearerToken(this.state.value);
     }
     authorizeLink () {
         const { albums } = this.props;
@@ -31,14 +42,15 @@ export default class View extends Component {
         }
         console.log(albums.bearer);
 
-        return (<a href={albums.bearer.response.authorize}>Authorize!</a>);
+        return (<a href={albums.bearer.response.authorize}>Please Authorize Discog!</a>);
     }
     render () {
         return (
             <div className="musicLibrary__div_container">
                 <div>
-                    Enter user name here <br />
-                    {this.authorizeLink() || <div> loading authorizer</div>}
+                    <input type="text" value={this.state.value} onChange={this.handleChange} /><br />
+                    <div onClick={this.getBearer}> get authorize link </div>
+                    {this.authorizeLink() || <div> </div>}
                 </div>
             </div>
         );

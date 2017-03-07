@@ -5,14 +5,13 @@ import { getBearerTokenFufilled } from './actions';
 export const getBearerToken = action$ =>
     action$
     .ofType(GET_BEARER_TOKEN)
-    .mergeMap(() =>
+    .mergeMap(action =>
             Observable.ajax({
                 url: 'http://127.0.0.1:7777/authorize',
                 method: 'POST',
-                crossDomain: true,
                 headers : {
                     'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8',
-                    'usernameToFetch' : 'mcsharps'
+                    'usernameToFetch' : action.payload
                 }
             })
             .map(response => getBearerTokenFufilled(response))
