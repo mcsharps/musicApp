@@ -51,7 +51,7 @@ export default class View extends Component {
                 <div className="albumAuthorizer__div">
                     <span><h1>Display my Record Collection</h1></span>
                     <span>To get started, enter your discogs username and authorize our app control.
-                    We will then display you&#39;re records! </span>
+                    We will then display your records! </span>
                     <br />
                     <input type="text" value={this.state.value} placeholder="Enter Discogs Username"
                     onChange={this.handleChange} className="userName__text" /><br />
