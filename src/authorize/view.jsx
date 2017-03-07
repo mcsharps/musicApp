@@ -42,14 +42,22 @@ export default class View extends Component {
         }
         console.log(albums.bearer);
 
-        return (<a href={albums.bearer.response.authorize}>Please Authorize Discog!</a>);
+        return (<button className="discogsAuthorize__link"><a
+            href={albums.bearer.response.authorize}>Discogs Authorization</a></button>);
     }
     render () {
         return (
             <div className="musicLibrary__div_container">
-                <div>
-                    <input type="text" value={this.state.value} onChange={this.handleChange} /><br />
-                    <div onClick={this.getBearer}> get authorize link </div>
+                <div className="albumAuthorizer__div">
+                    <span><h1>Display my Record Collection</h1></span>
+                    <span>To get started, enter your discogs username and authorize our app control.
+                    We will then display you&#39;re records! </span>
+                    <br />
+                    <input type="text" value={this.state.value} placeholder="Enter Discogs Username"
+                    onChange={this.handleChange} className="userName__text" /><br />
+                    <button className="authorizeLink__button"
+                    onClick={this.getBearer}> get authorize link </button>
+                    <br />
                     {this.authorizeLink() || <div> </div>}
                 </div>
             </div>
