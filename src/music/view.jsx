@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 // import { GET_MUSIC_LIBRARY_FUFILLED } from './action-types';
 // look into html 5 tag figure for image stuff
 import './musiclibrary.post.css';
+import AlbumIcon from './component/AlbumIcon';
 const propTypes = {
     albums: PropTypes.shape({
         payload: PropTypes.shape({}),
@@ -66,7 +67,7 @@ export default class View extends Component {
 
         return (
             <div className="musicLibrary__div_container">
-                    {this.musicResults() || <div> loading fool </div>}
+                    {this.musicResults() || <AlbumIcon />}
             </div>
         );
     }

@@ -80,7 +80,7 @@ try {
 
 const html = {
     template: './src/template.html',
-    title: process.env.npm_package_description,
+    title: "Groove Spider",
     buildDate: moment().format(),
     buildHash: buildHash,
     buildVersion: process.env.BUILD_VERSION || process.env.npm_package_version,

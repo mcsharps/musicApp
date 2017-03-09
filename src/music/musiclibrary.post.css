@@ -1,5 +1,27 @@
 // musiclibrary.post.css
 
+
+#record{
+  animation: record 3s linear infinite;
+  transform-origin: 111.4px 121.4px;
+}
+
+.album__svg{
+    padding-left: 168px;
+}
+.Loading__headers_title{
+    padding-left: 220px;
+    font-size: 30px;
+    font-family: initial;
+}
+@keyframes record {
+    0% {
+        transform: rotate( 0deg );
+    }
+  100% {
+        transform: rotate( 360deg );
+    }
+}
 .albums__images {
     width: 150px;
     height: 150px;
