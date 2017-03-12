@@ -1,6 +1,6 @@
 # Dependencies
 node_modules
-proxy
+proxy/proxydeaux.js
 # Release Folder
 dist
 

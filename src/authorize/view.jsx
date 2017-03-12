@@ -42,8 +42,9 @@ export default class View extends Component {
         }
         console.log(albums.bearer);
 
-        return (<button className="discogsAuthorize__link"><a
-            href={albums.bearer.response.authorize}>Discogs Authorization</a></button>);
+        return (<a
+            href={albums.bearer.response.authorize}>
+            <button className="discogsAuthorize__link ui primary button">Discogs Authorization</button></a>);
     }
     render () {
         return (
@@ -55,7 +56,7 @@ export default class View extends Component {
                     <br />
                     <input type="text" value={this.state.value} placeholder="Enter Discogs Username"
                     onChange={this.handleChange} className="userName__text" /><br />
-                    <button className="authorizeLink__button"
+                    <button className="ui primary button authorizeLink__button"
                     onClick={this.getBearer}> get authorize link </button>
                     <br />
                     {this.authorizeLink() || <div> </div>}

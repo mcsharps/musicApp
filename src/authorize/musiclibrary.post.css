@@ -5,6 +5,9 @@
     margin: 0 auto;
 }
 */
+h1{
+    font-family: 'Bitter', serif;
+}
 .albumAuthorizer__div{
     margin: 3%;
     padding: 3%;
@@ -15,13 +18,13 @@
     border-bottom-right-radius: 16px;
 }
 .authorizeLink__button{
-    margin-top: 3%;
+    margin-top: 15px !important;
 }
 .userName__text{
     width: 50%;
     margin-top: 3%;
 }
 .discogsAuthorize__link{
-    margin-top: 3%;
+    margin-top: 3% !important;
     display: inline-block;
 }
